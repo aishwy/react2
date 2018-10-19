@@ -10,27 +10,21 @@ class BurgerIngridient extends Component {
         
         switch(this.props.type) {
         case("BreadBottom"):
-        console.log("*Burger Ingridient",this.props.type);
         ingridient=<div className={classes.BreadBottom}></div>;
         break;
         case("BreadTop"):
-        ingridient=(
-            <div className={classes.BreadTop}>
-            <div className={classes.Seeds1}></div>
-            <div className={classes.Seeds2}></div>
-            </div>
-        )
+        ingridient= <div className={classes.BreadTop}></div>;
         break;
-        case("Meat"):
+        case("meat"):
         ingridient=<div className={classes.Meat}></div>;
         break;
-        case("Cheese"):
+        case("cheese"):
         ingridient=<div className={classes.Cheese}></div>;
         break;
-        case("Bacon"):
+        case("bacon"):
         ingridient=<div className={classes.Bacon}></div>;
         break;
-        case("Salad"):
+        case("salad"):
         ingridient=<div className={classes.Salad}></div>;
         break;
         default:
