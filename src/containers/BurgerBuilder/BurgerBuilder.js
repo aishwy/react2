@@ -3,6 +3,7 @@ import Aux from '../../hoc/Aux';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
+import Backdrop from '../../components/UI/Backdrop/Backdrop';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 const PRICES = {
     salad: 0.8,
@@ -39,7 +40,12 @@ class BurgerBuilder extends Component {
         });
     }
     purchaseHandler = () => {
+        console.log("order");
         this.setState({purchasing:true});
+    }
+    backHandler = () => {
+        console.log("back");
+        this.setState({purchasing:false});
     }
     moreHandler = (type) => {
         const newIngridients = this.state.ingridients;
@@ -82,10 +88,12 @@ class BurgerBuilder extends Component {
         return (
             
             <Aux>
+            <Backdrop show={this.state.purchasing} click={this.backHandler} />
             <Modal show={this.state.purchasing}> <OrderSummary ingridients={this.state.ingridients} /> </Modal>
+            
             <Burger ingridients={this.state.ingridients}/>
             <BuildControls 
-                        ordered={this.state.purchaseHandler}
+                        ordered={this.purchaseHandler}
                         more={this.moreHandler} 
                         less={this.lessHandler} 
                         disable={disableInfo}

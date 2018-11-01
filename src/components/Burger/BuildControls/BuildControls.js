@@ -10,7 +10,6 @@ const controls = [
 
 ];
 const BuildControls = (props) => {
-    console.log(props.disable);
     return (
     <div className={classes.BuildControls}>
         {   
