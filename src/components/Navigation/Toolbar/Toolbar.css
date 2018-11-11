@@ -1,6 +1,14 @@
 .Toolbar {
     display: flex;
-    background-color: tan;
+    background-color:#a57e4b;
     justify-content: space-between;
     padding: 10px 20px;
+}
+.navitems {
+    display: block;
+}
+@media (max-width:499px) {
+    .navitems {
+        display: none;
+    }
 }
