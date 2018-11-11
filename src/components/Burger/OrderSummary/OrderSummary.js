@@ -1,6 +1,8 @@
 import React from 'react';
 import Aux from '../../../hoc/Aux'
 import { Transform } from 'stream';
+import Button from '../../UI/Button/Button';
+import classes from './OrderSummary.css'
 const orderSummary = (props) => {
     const ingridientSummary = Object.keys(props.ingridients).map((igkey) =>{
         return (
@@ -12,10 +14,11 @@ return (
 
     <Aux>
     <h2> Here's what you put together </h2>
-    <p>{ingridientSummary}</p>
-    <ul>
-    </ul>
+    <p><ul>{ingridientSummary}</ul></p>
+    <div className={classes.Price}> Total Price : ${props.price.toFixed(2)} </div>
     <p>Do you wanna order the burger? </p>
+    <Button clicked={props.yes} type="Success"> YES </Button>
+    <Button clicked={props.no} type="Danger"> NO, GO BACK </Button>
     </Aux>
 );
 }

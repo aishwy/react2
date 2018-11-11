@@ -1,0 +1,33 @@
+You can set the margin property to auto to horizontally center the element within its 
+container.
+
+The element will then take up the specified width, and the remaining space will be 
+split equally between the left and right margins:
+
+
+overflow-
+scroll:	The overflow is clipped, but a scroll-bar is added to see the rest of the content
+auto:	Auto will only show a scrollbar when any content is clipped
+
+array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+reduces the array to a single value.
+executes a provided function for each value of the array.
+does not execute the function for array elements without values.
+
+The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+The flex container properties are:
+
+flex-direction
+flex-wrap
+flex-flow
+justify-content
+align-items
+align-content
+
+The <header> element represents a container for introductory content or a set of navigational links.
+You can have several <header> elements in one document.
+A <header> tag cannot be placed within a <footer>, <address> or another <header> element.
+The <header> tag is new in HTML5.
+
+The <nav> tag is a new element in HTML5. It is used to define a block of navigation links
+One HTML document may contain several <nav> tags

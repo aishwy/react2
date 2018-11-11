@@ -47,6 +47,9 @@ class BurgerBuilder extends Component {
         console.log("back");
         this.setState({purchasing:false});
     }
+    purchaseContinueHandler = () => {
+        alert("continue!");
+    }
     moreHandler = (type) => {
         const newIngridients = this.state.ingridients;
         newIngridients[type] = newIngridients[type]+1;
@@ -88,17 +91,25 @@ class BurgerBuilder extends Component {
         return (
             
             <Aux>
-            <Backdrop show={this.state.purchasing} click={this.backHandler} />
-            <Modal show={this.state.purchasing}> <OrderSummary ingridients={this.state.ingridients} /> </Modal>
-            
-            <Burger ingridients={this.state.ingridients}/>
-            <BuildControls 
-                        ordered={this.purchaseHandler}
-                        more={this.moreHandler} 
-                        less={this.lessHandler} 
-                        disable={disableInfo}
-                        price={this.state.price.toFixed(2)}
-                        purchasable={this.state.purchasable}/>
+                <Backdrop show={this.state.purchasing} click={this.backHandler} />
+                <Modal show={this.state.purchasing}> 
+                    <OrderSummary 
+                        price= {this.state.price}
+                        yes={this.purchaseContinueHandler} 
+                        no={this.backHandler}
+                        ingridients={this.state.ingridients} 
+                    /> 
+                </Modal>
+                
+                <Burger ingridients={this.state.ingridients}/>
+                <BuildControls 
+                    ordered={this.purchaseHandler}
+                    more={this.moreHandler} 
+                    less={this.lessHandler} 
+                    disable={disableInfo}
+                    price={this.state.price.toFixed(2)}
+                    purchasable={this.state.purchasable}
+                />
             </Aux>
         )
     }
