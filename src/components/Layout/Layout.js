@@ -3,11 +3,12 @@ import Aux from '../../hoc/Aux';
 import classes from './Layout.css'
 import ToolBar from '../Navigation/Toolbar/Toolbar';
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
+import Backdrop from '../UI/Backdrop/Backdrop';
 class Layout extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            showSideDrawer:true
+            showSideDrawer:false
         };
     }
     sideDrawerOpenHandler = () => {
@@ -19,8 +20,9 @@ class Layout extends Component{
     render() {
         return (
             <Aux>
-            <ToolBar/>
-            <SideDrawer open={this.state.showSideDrawer} closed={this.sideDrawerClosedHandler}/>
+            <Backdrop show={this.state.showSideDrawer} click={this.sideDrawerClosedHandler}/>
+            <ToolBar open={this.sideDrawerOpenHandler}/>
+            <SideDrawer open={this.state.showSideDrawer}/>
             <div className={classes.Content}>
                 {this.props.children}
             </div>

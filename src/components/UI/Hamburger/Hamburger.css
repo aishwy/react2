@@ -1,0 +1,12 @@
+.hamburger div {
+    margin-top:8px;
+    background-color: black;
+    width: 40px;
+    height: 5px;
+}
+
+@media (min-width:500px) {
+    .hamburger {
+        display: none;
+    }
+}

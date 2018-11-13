@@ -40,11 +40,9 @@ class BurgerBuilder extends Component {
         });
     }
     purchaseHandler = () => {
-        console.log("order");
         this.setState({purchasing:true});
     }
     backHandler = () => {
-        console.log("back");
         this.setState({purchasing:false});
     }
     purchaseContinueHandler = () => {
